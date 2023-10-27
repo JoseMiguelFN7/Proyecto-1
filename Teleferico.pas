@@ -1,6 +1,5 @@
 program teleferico;
 {$codepage UTF8} //Permite usar acentos y ñ en consola.
-//prueba
 uses crt, sysutils;
 var
 validNumDoc, validEdad, validNombre, validApellido, TAB, TBC, TCD, TDE: boolean;
