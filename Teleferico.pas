@@ -372,7 +372,108 @@ begin
                                         end;
                                     end;
                                     '2': begin //Tramo BC.
-                                        ///////////////////////////////
+                                        if (aDisponiblesBC>0) then
+                                        begin
+                                            repeat
+                                                clrscr;
+                                                write('¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesBC,' disponibles): ');
+                                                readln(nBoletosStr);
+                                                val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+                                                if ((error<>0) or (nBoletos<=0) or (aDisponiblesBC<nBoletos)) then
+                                                begin
+                                                    writeln('El dato ingresado no es válido.');
+                                                    delay(2000);
+                                                end;
+                                            until ((error=0) and (nBoletos>0) and (aDisponiblesBC>nBoletos));
+                                            for i:=1 to nBoletos do
+                                            begin
+                                                repeat
+                                                    clrscr;
+                                                    writeln('Datos necesarios para la compra del boleto ', i, ':'); //Para determinar el tipo de boleto que se comprara
+                                                    writeln('¿La persona que usará este boleto es un niño/a o persona de la tercera edad?:');
+                                                    writeln('1. Niño/a.');
+                                                    writeln('2. Persona de la tercera edad.');
+                                                    writeln('3. Ninguno de los dos.');
+                                                    tBoleto:=readkey;
+                                                    case (tBoleto) of
+                                                        '1': begin
+                                                            repeat
+                                                                clrscr;
+                                                                write('Por favor, ingrese la edad del niño/a: ');
+                                                                readln(edad);
+                                                                validEdad:=true;
+                                                                val(edad, edadInt, error);
+                                                                if ((error<>0) or (edad[1]='0') or (edadInt<=0)) then //Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+                                                                begin
+                                                                    writeln('El dato ingresado no es válido.');
+                                                                    delay(2000);
+                                                                end;
+                                                            until ((error=0) and (edad[1]<>'0') and (edadInt>0));
+                                                            if (edadInt<3) then
+                                                            begin
+                                                                precioBoleto:=precioExonerado;
+                                                                exoneradoBC+=1; //Contador general.
+                                                                FnBExoneradosBC+=1; //Contador para factura.
+                                                                writeln('Tipo de boleto adquirido: Exonerado.');
+                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                            end
+                                                            else begin
+                                                                if ((edadInt<=12) or (edadInt>60)) then
+                                                                begin
+                                                                    precioBoleto:=precioTEdadN;
+                                                                    tEdadNBC+=1; //Contador general.
+                                                                    FnBTEdadNBC+=1; //Contador para factura.
+                                                                    writeln('Tipo de boleto adquirido: Niños o tercera edad.');
+                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                end
+                                                                else begin
+                                                                    precioBoleto:=precioGeneral;
+                                                                    generalBC+=1; //Contador general.
+                                                                    FnBGeneralBC+=1; //Contador para factura.
+                                                                    writeln('Tipo de boleto adquirido: General.');
+                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                end;
+                                                            end;
+                                                        end;
+                                                        '2': begin
+                                                            clrscr;
+                                                            precioBoleto:=precioTEdadN;
+                                                            tEdadNBC+=1; //Contador general.
+                                                            FnBTEdadNBC+=1; //Contador para factura.
+                                                            writeln('Tipo de boleto adquirido: Niños o tercera edad.');
+                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                        end;
+                                                        '3': begin
+                                                            clrscr;
+                                                            precioBoleto:=precioGeneral;
+                                                            generalBC+=1; //Contador general.
+                                                            FnBGeneralBC+=1; //Contador para factura.
+                                                            writeln('Tipo de boleto adquirido: General.');
+                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                        end
+                                                        else begin
+                                                            writeln('El dato ingresado no es válido.');
+                                                            delay(2000);
+                                                        end;
+                                                    end;
+                                                until (tBoleto in ['1', '2', '3']);
+                                                FprecioTotalCompra+= precioBoleto;
+                                                delay(1000);
+                                                writeln('¡Boleto confirmado!');
+                                                writeln('Presione cualquier tecla para continuar...');
+                                                readkey;
+                                            end;
+                                            aDisponiblesBC-=nBoletos;
+                                            if (not (TBC)) then
+                                            begin
+                                                TBC:=true;
+                                            end;
+                                        end
+                                        else begin
+                                            writeln('Este tramo no tiene asientos disponibles.');
+                                            delay(2000);
+                                            clrscr;
+                                        end;
                                     end
                                     else begin
                                         writeln('El dato ingresado no es válido.');
