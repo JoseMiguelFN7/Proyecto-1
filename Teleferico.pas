@@ -5,15 +5,16 @@ var
 validNumDoc, validNombre, validApellido, TAB, TBC, TCD, TDE: boolean;
 op, estacion, tramo, tBoleto, otro, systemOp: char;
 nombre, apellido, tDoc, numDoc, nBoletosStr, edad: string;
-i, edadInt, precioBoleto, FprecioTotalCompra, ventaTotal, nBoletos, error, nBGeneralVendidos, nBTEdadNVendidos, nBExoneradosVendidos, aDisponiblesAB, aDisponiblesBC, aDisponiblesCD, aDisponiblesDE, FnBGeneralAB, FnBTEdadNAB, FnBExoneradosAB, FnBGeneralBC, FnBTEdadNBC, FnBExoneradosBC, FnBGeneralCD, FnBTEdadNCD, FnBExoneradosCD, FnBGeneralDE, FnBTEdadNDE, FnBExoneradosDE, generalAB, tEdadNAB, exoneradoAB, generalBC, tEdadNBC, exoneradoBC, generalCD, tEdadNCD, exoneradoCD, generalDE, tEdadNDE, exoneradoDE, nBTotalVendidos, VentaGeneralAB, VentaTEdadNAB, VentaExoneradoAB, VentaGeneralBC, VentaTEdadNBC, VentaExoneradoBC, VentaGeneralCD, VentaTEdadNCD, VentaExoneradoCD, VentaGeneralDE, VentaTEdadNDE, VentaExoneradoDE, VentaGeneralTotal, VentaTEdadNTotal, VentaExoneradoTotal: integer;
+i, edadInt, nBoletos, error, nBGeneralVendidos, nBTEdadNVendidos, nBExoneradosVendidos, aDisponiblesAB, aDisponiblesBC, aDisponiblesCD, aDisponiblesDE, FnBGeneralAB, FnBTEdadNAB, FnBExoneradosAB, FnBGeneralBC, FnBTEdadNBC, FnBExoneradosBC, FnBGeneralCD, FnBTEdadNCD, FnBExoneradosCD, FnBGeneralDE, FnBTEdadNDE, FnBExoneradosDE, generalAB, tEdadNAB, exoneradoAB, generalBC, tEdadNBC, exoneradoBC, generalCD, tEdadNCD, exoneradoCD, generalDE, tEdadNDE, exoneradoDE, nBTotalVendidos: integer;
+ventaTotal, VentaGeneralAB, VentaTEdadNAB, VentaExoneradoAB, VentaGeneralBC, VentaTEdadNBC, VentaExoneradoBC, VentaGeneralCD, VentaTEdadNCD, VentaExoneradoCD, VentaGeneralDE, VentaTEdadNDE, VentaExoneradoDE, VentaGeneralTotal, VentaTEdadNTotal, VentaExoneradoTotal, precioBoleto, FprecioTotalCompra: real;
 const
-precioGeneral: integer = 20;
-precioTEdadN: integer = 12;
-precioExonerado: integer = 0;
+precioGeneral: real = 20;
+precioTEdadN: real = 12;
+precioExonerado: real = 0;
 
 begin
     clrscr;
-    writeln('Bienvenido al sistema de teleférico de Mérida!');
+    writeln('¡Bienvenido al sistema de teleférico de Mérida!');
     //La cantidad de tipos de boletos totales vendidos inicia siendo cero.
     nBGeneralVendidos:=0;
     nBTEdadNVendidos:=0;
@@ -225,7 +226,7 @@ begin
                                                     exoneradoAB+=1; //Contador general.
                                                     FnBExoneradosAB+=1; //Contador para factura.
                                                     writeln('Tipo de boleto adquirido: Exonerado.');
-                                                    writeln('Precio: ', precioExonerado, '$.');
+                                                    writeln('Precio: ', precioExonerado:0:2, '$.');
                                                 end
                                                 else begin
                                                     if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -234,14 +235,14 @@ begin
                                                         tEdadNAB+=1; //Contador general.
                                                         FnBTEdadNAB+=1; //Contador para factura.
                                                         writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                        writeln('Precio: ', precioTEdadN, '$.');
+                                                        writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                     end
                                                     else begin //General.
                                                         precioBoleto:=precioGeneral;
                                                         generalAB+=1; //Contador general.
                                                         FnBGeneralAB+=1; //Contador para factura.
                                                         writeln('Tipo de boleto adquirido: General.');
-                                                        writeln('Precio: ', precioGeneral, '$.');
+                                                        writeln('Precio: ', precioGeneral:0:2, '$.');
                                                     end;
                                                 end;
                                             end;
@@ -251,7 +252,7 @@ begin
                                                 tEdadNAB+=1; //Contador general.
                                                 FnBTEdadNAB+=1; //Contador para factura.
                                                 writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                writeln('Precio: ', precioTEdadN, '$.');
+                                                writeln('Precio: ', precioTEdadN:0:2, '$.');
                                             end;
                                             '3': begin //General.
                                                 clrscr;
@@ -259,7 +260,7 @@ begin
                                                 generalAB+=1; //Contador general.
                                                 FnBGeneralAB+=1; //Contador para factura.
                                                 writeln('Tipo de boleto adquirido: General.');
-                                                writeln('Precio: ', precioGeneral, '$.');
+                                                writeln('Precio: ', precioGeneral:0:2, '$.');
                                             end
                                             else begin
                                                 writeln('El dato ingresado no es válido.');
@@ -337,7 +338,7 @@ begin
                                                                 exoneradoAB+=1; //Contador general.
                                                                 FnBExoneradosAB+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o tercera edad.
@@ -346,14 +347,14 @@ begin
                                                                     tEdadNAB+=1; //Contador general.
                                                                     FnBTEdadNAB+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General.
                                                                     precioBoleto:=precioGeneral;
                                                                     generalAB+=1; //Contador general.
                                                                     FnBGeneralAB+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -363,7 +364,7 @@ begin
                                                             tEdadNAB+=1; //Contador general.
                                                             FnBTEdadNAB+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -371,7 +372,7 @@ begin
                                                             generalAB+=1; //Contador general.
                                                             FnBGeneralAB+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -440,7 +441,7 @@ begin
                                                                 exoneradoBC+=1; //Contador general.
                                                                 FnBExoneradosBC+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -449,14 +450,14 @@ begin
                                                                     tEdadNBC+=1; //Contador general.
                                                                     FnBTEdadNBC+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General.
                                                                     precioBoleto:=precioGeneral;
                                                                     generalBC+=1; //Contador general.
                                                                     FnBGeneralBC+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -466,7 +467,7 @@ begin
                                                             tEdadNBC+=1; //Contador general.
                                                             FnBTEdadNBC+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -474,7 +475,7 @@ begin
                                                             generalBC+=1; //Contador general.
                                                             FnBGeneralBC+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -559,7 +560,7 @@ begin
                                                                 exoneradoBC+=1; //Contador general.
                                                                 FnBExoneradosBC+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -568,14 +569,14 @@ begin
                                                                     tEdadNBC+=1; //Contador general.
                                                                     FnBTEdadNBC+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General.
                                                                     precioBoleto:=precioGeneral;
                                                                     generalBC+=1; //Contador general.
                                                                     FnBGeneralBC+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -585,7 +586,7 @@ begin
                                                             tEdadNBC+=1; //Contador general.
                                                             FnBTEdadNBC+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -593,7 +594,7 @@ begin
                                                             generalBC+=1; //Contador general.
                                                             FnBGeneralBC+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -662,7 +663,7 @@ begin
                                                                 exoneradoCD+=1; //Contador general.
                                                                 FnBExoneradosCD+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -671,14 +672,14 @@ begin
                                                                     tEdadNCD+=1; //Contador general.
                                                                     FnBTEdadNCD+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General
                                                                     precioBoleto:=precioGeneral;
                                                                     generalCD+=1; //Contador general.
                                                                     FnBGeneralCD+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -688,7 +689,7 @@ begin
                                                             tEdadNCD+=1; //Contador general.
                                                             FnBTEdadNCD+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -696,7 +697,7 @@ begin
                                                             generalCD+=1; //Contador general.
                                                             FnBGeneralCD+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -781,7 +782,7 @@ begin
                                                                 exoneradoCD+=1; //Contador general.
                                                                 FnBExoneradosCD+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -790,14 +791,14 @@ begin
                                                                     tEdadNCD+=1; //Contador general.
                                                                     FnBTEdadNCD+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General.
                                                                     precioBoleto:=precioGeneral;
                                                                     generalCD+=1; //Contador general.
                                                                     FnBGeneralCD+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -807,7 +808,7 @@ begin
                                                             tEdadNCD+=1; //Contador general.
                                                             FnBTEdadNCD+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -815,7 +816,7 @@ begin
                                                             generalCD+=1; //Contador general.
                                                             FnBGeneralCD+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -884,7 +885,7 @@ begin
                                                                 exoneradoDE+=1; //Contador general.
                                                                 FnBExoneradosDE+=1; //Contador para factura.
                                                                 writeln('Tipo de boleto adquirido: Exonerado.');
-                                                                writeln('Precio: ', precioExonerado, '$.');
+                                                                writeln('Precio: ', precioExonerado:0:2, '$.');
                                                             end
                                                             else begin
                                                                 if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -893,14 +894,14 @@ begin
                                                                     tEdadNDE+=1; //Contador general.
                                                                     FnBTEdadNDE+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                                    writeln('Precio: ', precioTEdadN, '$.');
+                                                                    writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                                 end
                                                                 else begin //General.
                                                                     precioBoleto:=precioGeneral;
                                                                     generalDE+=1; //Contador general.
                                                                     FnBGeneralDE+=1; //Contador para factura.
                                                                     writeln('Tipo de boleto adquirido: General.');
-                                                                    writeln('Precio: ', precioGeneral, '$.');
+                                                                    writeln('Precio: ', precioGeneral:0:2, '$.');
                                                                 end;
                                                             end;
                                                         end;
@@ -910,7 +911,7 @@ begin
                                                             tEdadNDE+=1; //Contador general.
                                                             FnBTEdadNDE+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                            writeln('Precio: ', precioTEdadN, '$.');
+                                                            writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                         end;
                                                         '3': begin //General.
                                                             clrscr;
@@ -918,7 +919,7 @@ begin
                                                             generalDE+=1; //Contador general.
                                                             FnBGeneralDE+=1; //Contador para factura.
                                                             writeln('Tipo de boleto adquirido: General.');
-                                                            writeln('Precio: ', precioGeneral, '$.');
+                                                            writeln('Precio: ', precioGeneral:0:2, '$.');
                                                         end
                                                         else begin
                                                             writeln('El dato ingresado no es válido.');
@@ -999,7 +1000,7 @@ begin
                                                     exoneradoDE+=1; //Contador general.
                                                     FnBExoneradosDE+=1; //Contador para factura.
                                                     writeln('Tipo de boleto adquirido: Exonerado.');
-                                                    writeln('Precio: ', precioExonerado, '$.');
+                                                    writeln('Precio: ', precioExonerado:0:2, '$.');
                                                 end
                                                 else begin
                                                     if ((edadInt<=12) or (edadInt>60)) then //Niño/a o Tercera edad.
@@ -1008,14 +1009,14 @@ begin
                                                         tEdadNDE+=1; //Contador general.
                                                         FnBTEdadNDE+=1; //Contador para factura.
                                                         writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                        writeln('Precio: ', precioTEdadN, '$.');
+                                                        writeln('Precio: ', precioTEdadN:0:2, '$.');
                                                     end
                                                     else begin //General
                                                         precioBoleto:=precioGeneral;
                                                         generalDE+=1; //Contador general.
                                                         FnBGeneralDE+=1; //Contador para factura.
                                                         writeln('Tipo de boleto adquirido: General.');
-                                                        writeln('Precio: ', precioGeneral, '$.');
+                                                        writeln('Precio: ', precioGeneral:0:2, '$.');
                                                     end;
                                                 end;
                                             end;
@@ -1025,7 +1026,7 @@ begin
                                                 tEdadNDE+=1; //Contador general.
                                                 FnBTEdadNDE+=1; //Contador para factura.
                                                 writeln('Tipo de boleto adquirido: Niños o tercera edad.');
-                                                writeln('Precio: ', precioTEdadN, '$.');
+                                                writeln('Precio: ', precioTEdadN:0:2, '$.');
                                             end;
                                             '3': begin //General
                                                 clrscr;
@@ -1033,7 +1034,7 @@ begin
                                                 generalDE+=1; //Contador general.
                                                 FnBGeneralDE+=1; //Contador para factura.
                                                 writeln('Tipo de boleto adquirido: General.');
-                                                writeln('Precio: ', precioGeneral, '$.');
+                                                writeln('Precio: ', precioGeneral:0:2, '$.');
                                             end
                                             else begin
                                                 writeln('El dato ingresado no es válido.');
@@ -1099,15 +1100,15 @@ begin
                     writeln('Tramo Barinitas - La Montaña.');
                     if (FnBGeneralAB>0) then
                     begin
-                        writeln('Boletos Generales: ', FnBGeneralAB, ' x', precioGeneral, '$.                           ', FnBGeneralAB*precioGeneral, '$.');
+                        writeln('Boletos Generales:                ', FnBGeneralAB, ' x', precioGeneral:0:2, '$.            ', (FnBGeneralAB*precioGeneral):0:2, '$.');
                     end;
                     if (FnBTEdadNAB>0) then
                     begin
-                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNAB, ' x', precioTEdadN, '$.                ', FnBTEdadNAB*precioTEdadN, '$.');
+                        writeln('Boletos Tercera Edad o Niños:     ', FnBTEdadNAB, ' x', precioTEdadN:0:2, '$.            ', (FnBTEdadNAB*precioTEdadN):0:2, '$.');
                     end;
                     if (FnBExoneradosAB>0) then
                     begin
-                        writeln('Boletos Exonerados: ', FnBExoneradosAB, ' x', precioExonerado, '$.                           ', FnBExoneradosAB*precioExonerado, '$.');
+                        writeln('Boletos Exonerados:               ', FnBExoneradosAB, ' x', precioExonerado:0:2, '$.             ', (FnBExoneradosAB*precioExonerado):0:2, '$.');
                     end;
                     writeln('');
                 end;
@@ -1116,15 +1117,15 @@ begin
                     writeln('Tramo La Montaña - La Aguada.');
                     if (FnBGeneralBC>0) then
                     begin
-                        writeln('Boletos Generales: ', FnBGeneralBC, ' x', precioGeneral, '$.                           ', FnBGeneralBC*precioGeneral, '$.');
+                        writeln('Boletos Generales: ', FnBGeneralBC, ' x', precioGeneral:0:2, '$.                           ', (FnBGeneralBC*precioGeneral):0:2, '$.');
                     end;
                     if (FnBTEdadNBC>0) then
                     begin
-                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNBC, ' x', precioTEdadN, '$.                ', FnBTEdadNBC*precioTEdadN, '$.');
+                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNBC, ' x', precioTEdadN:0:2, '$.                ', (FnBTEdadNBC*precioTEdadN):0:2, '$.');
                     end;
                     if (FnBExoneradosBC>0) then
                     begin
-                        writeln('Boletos Exonerados: ', FnBExoneradosBC, ' x', precioExonerado, '$.                           ', FnBExoneradosBC*precioExonerado, '$.');
+                        writeln('Boletos Exonerados: ', FnBExoneradosBC, ' x', precioExonerado:0:2, '$.                           ', (FnBExoneradosBC*precioExonerado):0:2, '$.');
                     end;
                     writeln('');
                 end;
@@ -1133,15 +1134,15 @@ begin
                     writeln('Tramo La Aguada - Loma Redonda.');
                     if (FnBGeneralCD>0) then
                     begin
-                        writeln('Boletos Generales: ', FnBGeneralCD, ' x', precioGeneral, '$.                           ', FnBGeneralCD*precioGeneral, '$.');
+                        writeln('Boletos Generales: ', FnBGeneralCD, ' x', precioGeneral:0:2, '$.                           ', (FnBGeneralCD*precioGeneral):0:2, '$.');
                     end;
                     if (FnBTEdadNCD>0) then
                     begin
-                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNCD, ' x', precioTEdadN, '$.                ', FnBTEdadNCD*precioTEdadN, '$.');
+                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNCD, ' x', precioTEdadN:0:2, '$.                ', (FnBTEdadNCD*precioTEdadN):0:2, '$.');
                     end;
                     if (FnBExoneradosCD>0) then
                     begin
-                        writeln('Boletos Exonerados: ', FnBExoneradosCD, ' x', precioExonerado, '$.                           ', FnBExoneradosCD*precioExonerado, '$.');
+                        writeln('Boletos Exonerados: ', FnBExoneradosCD, ' x', precioExonerado:0:2, '$.                           ', (FnBExoneradosCD*precioExonerado):0:2, '$.');
                     end;
                     writeln('');
                 end;
@@ -1150,19 +1151,19 @@ begin
                     writeln('Tramo Loma Redonda - Pico Espejo.');
                     if (FnBGeneralDE>0) then
                     begin
-                        writeln('Boletos Generales: ', FnBGeneralDE, ' x', precioGeneral, '$.                           ', FnBGeneralDE*precioGeneral, '$.');
+                        writeln('Boletos Generales: ', FnBGeneralDE, ' x', precioGeneral:0:2, '$.                           ', (FnBGeneralDE*precioGeneral):0:2, '$.');
                     end;
                     if (FnBTEdadNDE>0) then
                     begin
-                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNDE, ' x', precioTEdadN, '$.                ', FnBTEdadNDE*precioTEdadN, '$.');
+                        writeln('Boletos Tercera Edad o Niños: ', FnBTEdadNDE, ' x', precioTEdadN:0:2, '$.                ', (FnBTEdadNDE*precioTEdadN):0:2, '$.');
                     end;
                     if (FnBExoneradosDE>0) then
                     begin
-                        writeln('Boletos Exonerados: ', FnBExoneradosDE, ' x', precioExonerado, '$.                           ', FnBExoneradosDE*precioExonerado, '$.');
+                        writeln('Boletos Exonerados: ', FnBExoneradosDE, ' x', precioExonerado:0:2, '$.                           ', (FnBExoneradosDE*precioExonerado):0:2, '$.');
                     end;
                     writeln('');
                 end;
-                writeln('                                                 TOTAL: ', FprecioTotalCompra, '$.');
+                writeln('                                                 TOTAL: ', FprecioTotalCompra:0:2, '$.');
                 writeln('');
                 writeln('Presione cualquier tecla para continuar...');
                 readkey;
@@ -1183,6 +1184,7 @@ begin
                             nBGeneralVendidos:= generalAB + generalBC + generalCD + generalDE;
                             nBTEdadNVendidos:= tEdadNAB + tEdadNBC + tEdadNCD + tEdadNDE;
                             nBExoneradosVendidos:= exoneradoAB + exoneradoBC + exoneradoCD + exoneradoDE;
+                            nBTotalVendidos:= nBGeneralVendidos+ nBTEdadNVendidos + nBExoneradosVendidos;
                             writeln('Número de boletos vendidos en cada tramo: ');
                             writeln('');
                             writeln('Tramo Barinitas - La Montaña:');
@@ -1251,29 +1253,29 @@ begin
                             writeln('Reporte de Ventas');
                             writeln('');
                             writeln('Tramo Barinitas - La Montaña:');
-                            writeln('General:                             ', precioGeneral, '$x', generalAB, '                 Total: ', VentaGeneralAB, '$');
-                            writeln('Tercera Edad o Niños:                ', precioTEdadN, '$x', tEdadNAB, '                 Total: ', VentaTEdadNAB, '$');
-                            writeln('Exonerado:                           ', precioExonerado, '$x', exoneradoAB, '                  Total: ', VentaExoneradoAB, '$');
+                            writeln('General:                             ', precioGeneral:0:2, '$x', generalAB, '                 Total: ', VentaGeneralAB:0:2, '$');
+                            writeln('Tercera Edad o Niños:                ', precioTEdadN:0:2, '$x', tEdadNAB, '                 Total: ', VentaTEdadNAB:0:2, '$');
+                            writeln('Exonerado:                           ', precioExonerado:0:2, '$x', exoneradoAB, '                  Total: ', VentaExoneradoAB:0:2, '$');
                             writeln('');
                             writeln('Tramo La Montaña - La Aguada:');
-                            writeln('General:                             ', precioGeneral, '$x', generalBC, '                 Total: ', VentaGeneralBC, '$');
-                            writeln('Tercera Edad o Niños:                ', precioTEdadN, '$x', tEdadNBC, '                 Total: ', VentaTEdadNBC, '$');
-                            writeln('Exonerado:                           ', precioExonerado, '$x', exoneradoBC, '                  Total: ', VentaExoneradoBC, '$');
+                            writeln('General:                             ', precioGeneral:0:2, '$x', generalBC, '                 Total: ', VentaGeneralBC:0:2, '$');
+                            writeln('Tercera Edad o Niños:                ', precioTEdadN:0:2, '$x', tEdadNBC, '                 Total: ', VentaTEdadNBC:0:2, '$');
+                            writeln('Exonerado:                           ', precioExonerado:0:2, '$x', exoneradoBC, '                  Total: ', VentaExoneradoBC:0:2, '$');
                             writeln('');
                             writeln('Tramo La Aguada - Loma Redonda:');
-                            writeln('General:                             ', precioGeneral, '$x', generalCD, '                 Total: ', VentaGeneralCD, '$');
-                            writeln('Tercera Edad o Niños:                ', precioTEdadN, '$x', tEdadNCD, '                 Total: ', VentaTEdadNCD, '$');
-                            writeln('Exonerado:                           ', precioExonerado, '$x', exoneradoCD, '                  Total: ', VentaExoneradoCD, '$');
+                            writeln('General:                             ', precioGeneral:0:2, '$x', generalCD, '                 Total: ', VentaGeneralCD:0:2, '$');
+                            writeln('Tercera Edad o Niños:                ', precioTEdadN:0:2, '$x', tEdadNCD, '                 Total: ', VentaTEdadNCD:0:2, '$');
+                            writeln('Exonerado:                           ', precioExonerado:0:2, '$x', exoneradoCD, '                  Total: ', VentaExoneradoCD:0:2, '$');
                             writeln('');
                             writeln('Tramo Loma Redonda - Pico Espejo:');
-                            writeln('General:                             ', precioGeneral, '$x', generalDE, '                 Total: ', VentaGeneralDE, '$');
-                            writeln('Tercera Edad o Niños:                ', precioTEdadN, '$x', tEdadNDE, '                 Total: ', VentaTEdadNDE, '$');
-                            writeln('Exonerado:                           ', precioExonerado, '$x', exoneradoDE, '                  Total: ', VentaExoneradoDE, '$');
+                            writeln('General:                             ', precioGeneral:0:2, '$x', generalDE, '                 Total: ', VentaGeneralDE:0:2, '$');
+                            writeln('Tercera Edad o Niños:                ', precioTEdadN:0:2, '$x', tEdadNDE, '                 Total: ', VentaTEdadNDE:0:2, '$');
+                            writeln('Exonerado:                           ', precioExonerado:0:2, '$x', exoneradoDE, '                  Total: ', VentaExoneradoDE:0:2, '$');
                             writeln('');
-                            writeln('Total General:                       ', VentaGeneralTotal, '$');
-                            writeln('Total Tercera Edad o Niños:          ', VentaTEdadNTotal, '$');
-                            writeln('Total Exonerado:                     ', VentaExoneradoTotal, '$');
-                            writeln('TOTAL:                               ', ventaTotal, '$');
+                            writeln('Total General:                       ', VentaGeneralTotal:0:2, '$');
+                            writeln('Total Tercera Edad o Niños:          ', VentaTEdadNTotal:0:2, '$');
+                            writeln('Total Exonerado:                     ', VentaExoneradoTotal:0:2, '$');
+                            writeln('TOTAL:                               ', ventaTotal:0:2, '$');
                             writeln('');
                             writeln('Presione cualquier tecla para continuar...');
                             readkey;
