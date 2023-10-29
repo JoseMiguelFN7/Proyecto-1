@@ -1,0 +1,216 @@
+Inicio
+var
+validNumDoc, validNombre, validApellido, TAB, TBC, TCD, TDE: boolean;
+op, estacion, tramo, tBoleto, otro, systemOp: char;
+nombre, apellido, tDoc, numDoc, nBoletosStr, edad: string;
+i, edadInt, nBoletos, error, nBGeneralVendidos, nBTEdadNVendidos, nBExoneradosVendidos, aDisponiblesAB, aDisponiblesBC, aDisponiblesCD, aDisponiblesDE, FnBGeneralAB, FnBTEdadNAB, FnBExoneradosAB, FnBGeneralBC, FnBTEdadNBC, FnBExoneradosBC, FnBGeneralCD, FnBTEdadNCD, FnBExoneradosCD, FnBGeneralDE, FnBTEdadNDE, FnBExoneradosDE, generalAB, tEdadNAB, exoneradoAB, generalBC, tEdadNBC, exoneradoBC, generalCD, tEdadNCD, exoneradoCD, generalDE, tEdadNDE, exoneradoDE, nBTotalVendidos: integer;
+ventaTotal, VentaGeneralAB, VentaTEdadNAB, VentaExoneradoAB, VentaGeneralBC, VentaTEdadNBC, VentaExoneradoBC, VentaGeneralCD, VentaTEdadNCD, VentaExoneradoCD, VentaGeneralDE, VentaTEdadNDE, VentaExoneradoDE, VentaGeneralTotal, VentaTEdadNTotal, VentaExoneradoTotal, precioBoleto, FprecioTotalCompra: real;
+const
+precioGeneral: real = 20;
+precioTEdadN: real = 12;
+precioExonerado: real = 0;
+
+Limpiar pantalla;
+//La cantidad de tipos de boletos totales vendidos inicia siendo cero.
+nBGeneralVendidos=0;
+nBTEdadNVendidos=0;
+nBExoneradosVendidos=0;
+//La cantidad de tipos de boletos vendidos POR TRAMO inicia siendo cero.
+generalAB=0;
+tEdadNAB=0;
+exoneradoAB=0;
+generalBC=0;
+tEdadNBC=0;
+exoneradoBC=0;
+generalCD=0;
+tEdadNCD=0;
+exoneradoCD=0;
+generalDE=0;
+tEdadNDE=0;
+exoneradoDE=0;
+//La cantidad total de boletos vendidos inicia siendo cero.
+nBTotalVendidos=0;
+//Los asientos disponibles en cada tramo empiezan siendo 60;
+aDisponiblesAB=60;
+aDisponiblesBC=60;
+aDisponiblesCD=60;
+aDisponiblesDE=60;
+//Los montos totales de las ventas de tipo de boleto POR TRAMO inicia siendo cero.
+VentaGeneralAB=0;
+VentaTEdadNAB=0;
+VentaExoneradoAB=0;
+VentaGeneralBC=0;
+VentaTEdadNBC=0;
+VentaExoneradoBC=0;
+VentaGeneralCD=0;
+VentaTEdadNCD=0;
+VentaExoneradoCD=0;
+VentaGeneralDE=0;
+VentaTEdadNDE=0;
+VentaExoneradoDE=0;
+//El monto de las ventas de tipos de boletos totales inicia siendo cero.
+VentaGeneralTotal=0;
+VentaTEdadNTotal=0;
+VentaExoneradoTotal=0;
+//El monto de la venta total de los boletos inicia siendo cero.
+ventaTotal=0;
+Escribir "  |---------------------------------------------------|";
+Escribir "  |--¡Bienvenido al sistema de teleférico de Mérida!--|";
+Repetir
+	Escribir "  |---------------------------------------------------|";
+	Escribir "  | Por favor, indique la opción que desea realizar.  |";
+	Escribir "  |---------------------------------------------------|";
+	Escribir "  | 1. Comprar boleto.                                |";
+	Escribir "  |---------------------------------------------------|";
+	Escribir "  | 2. Ver sistema.                                   |";
+	Escribir "  |---------------------------------------------------|";
+	Escribir "  | 3. Salir.                                         |";
+	Escribir "  |---------------------------------------------------|";
+	op:=readkey;
+	Segun op Hacer
+		Caso, =1
+			Repetir //Solicita nombre del comprador.
+				Limpiar Pantalla;
+				Escribir "  |---------------------------------------|";
+				Escribir "  | Por favor, ingrese su primer nombre:  |";
+				Escribir "  |---------------------------------------|";
+				Escribir "  |-> ";
+				Leer (nombre);
+				validNombre=true;
+				Si (nombre = "" o No (nombre[1] está en el rango de "A" a "Z")) //Si la entrada es vacia o la primera letra no es mayuscula, no lo acepta.
+					validNombre=false;
+					gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de nombre, el | este siempre en el mismo sitio.
+					Escribir "  |---------------------------------------|";
+					Escribir "  | El dato ingresado no es válido.       |";
+					Escribir "  | (Debe empezar por mayúscula y no      |";
+					Escribir "  |  tener números).                      |";
+					Escribir "  |---------------------------------------|";
+					delay(2000);
+				Sino 
+					Para i=2 hasta longitud(nombre)
+						Si no (nombre[i] está en el rango de "a" a "z")//Si la entrada tiene numeros, caracteres especiales o una mayuscula en el medio, no lo acepta.
+							validNombre=false;
+							gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de nombre, el | este siempre en el mismo sitio.
+							Escribir "  |---------------------------------------|";
+							Escribir "  | El dato ingresado no es válido.       |";
+							Escribir "  | (Debe empezar por mayúscula y no      |";
+							Escribir "  |  tener números).                      |";
+							Escribir "  |---------------------------------------|";
+							delay(2000);
+							break; //Si consigue uno, no hace falta revisar el resto.
+						Fin Si
+					Fin Para
+				Fin Sino
+				Fin Si
+			Hasta validNombre;
+			Repetir //Solicita apellido del comprador.
+				Limpiar Pantalla;
+				Escribir "  |-----------------------------------------|";
+				Escribir "  | Por favor, ingrese su primer apellido:  |";
+				Escribir "  |-----------------------------------------|";
+				Escribir "  |-> ";
+				Leer (apellido);
+				validApellido=true;
+				Si (apellido = "" o No (apellido[1] está en el rango de "A" a "Z")) //Si la entrada es vacia o la primera letra no es mayuscula, no lo acepta.
+					validApellido=false;
+					gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de apellido, el | este siempre en el mismo sitio.
+					Escribir "  |---------------------------------------|";
+					Escribir "  | El dato ingresado no es válido.       |";
+					Escribir "  | (Debe empezar por mayúscula y no      |";
+					Escribir "  |  tener números).                      |";
+					Escribir "  |---------------------------------------|";
+					delay(2000);
+				Sino 
+					Para i=2 hasta longitud(apellido)
+						Si no (apellido[i] está en el rango de "a" a "z")//Si la entrada tiene numeros, caracteres especiales o una mayuscula en el medio, no lo acepta.
+							validApellido=false;
+							gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de nombre, el | este siempre en el mismo sitio.
+							Escribir "  |---------------------------------------|";
+							Escribir "  | El dato ingresado no es válido.       |";
+							Escribir "  | (Debe empezar por mayúscula y no      |";
+							Escribir "  |  tener números).                      |";
+							Escribir "  |---------------------------------------|";
+							delay(2000);
+							break; //Si consigue uno, no hace falta revisar el resto.
+						Fin Si
+					Fin Para
+				Fin Sino
+				Fin Si
+			Hasta validApellido;
+			Repetir
+				Limpiar pantalla;
+				Escribir"  |-----------------------------------------------------|";
+				Escribir"  | Por favor, indique el tipo de documento (V/E/J/G):  |";
+				Escribir"  |-----------------------------------------------------|";
+				tdoc=UpperCase(readkey);
+				Si no (tdoc[1] está entre ["V", "E", "J", "G"]) //Si el caracter ingresado no es ninguno de los solicitados, el sistema lo rechazara.
+					Escribir"  | El dato ingresado no es válido.                     |";
+					Escribir"  |-----------------------------------------------------|";
+					delay(2000);
+				Fin Si
+			Hasta (tdoc[1] está entre ["V", "E", "J", "G"]) //Sale del loop cuando se ingresa un caracter valido.
+			Repetir
+				Limpiar pantalla;
+				Escribir"  |---------------------------------------------------------------------|";
+				Escribir"  | Por favor, indique el número del documento sin puntos ni espacios:  |";
+				Escribir"  |---------------------------------------------------------------------|";
+				Escribir"  |-> ";
+				Leer"numDoc";
+				validNumDoc=true;
+				Si (numDoc[1]="0" o numDoc="") //Si la entrada es vacia, empieza por, o es cero, no sera aceptada.
+					validNumDoc=false;
+					gotoXY(73, WhereY-1); Escribir('|'); //Para que sin importar el valor de numDoc, el | este siempre en el mismo sitio.
+					Escribir"  |---------------------------------------------------------------------|";
+					Escribir"  | El dato ingresado no es válido.                                     |";
+					Escribir"  |---------------------------------------------------------------------|";
+					delay(2000);
+				Sino
+					Para i=1 hasta longitud(numDoc)
+						Si no (numDoc[i] está en el rango de "0" a "9")//Si la entrada contiene algo que no es un numero, sera rechazada.
+							validNumDoc=false;
+							gotoXY(73, WhereY-1); Escribir('|'); //Para que sin importar el valor de numDoc, el | este siempre en el mismo sitio.
+							Escribir"  |---------------------------------------------------------------------|";
+							Escribir"  | El dato ingresado no es válido.                                     |";
+							Escribir"  |---------------------------------------------------------------------|";
+							delay(2000);
+							break; //Si consigue un valor invalido, no es necesario chequear el resto.
+						Fin Si
+					Fin Para
+				Fin Sino
+				Fin Si
+			Hasta validNumDoc; //Sale del loop cuando se ingrese un numero sin letras ni caracteres especiales y que no empiece por o sea cero o menor.
+			///////////////////// Valores iniciales de los datos para la factura
+			FprecioTotalCompra=0;
+                	FnBGeneralAB=0;
+                	FnBTEdadNAB=0;
+                	FnBExoneradosAB=0;
+                	FnBGeneralBC=0;
+                	FnBTEdadNBC=0;
+                	FnBExoneradosBC=0;
+                	FnBGeneralCD:=0;
+                	FnBTEdadNCD=0;
+                	FnBExoneradosCD=0;
+                	FnBGeneralDE=0;
+                	FnBTEdadNDE=0;
+                	FnBExoneradosDE=0;
+                	TAB=false;
+                	TBC=false;
+                	TCD=false;
+                	TDE=false;
+			Repetir
+				////////////////////////////////////////////////////////////////////////////////ESTACION Y TRAMO
+				Limpiar pantalla;
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | Por favor, indique la estación para la que quiere comprar boleto: |"; //Pide la estacion.
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | 1. Barinitas.                                                     |";
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | 2. La Montaña.                                                    |";
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | 3. La Aguada.                                                     |";
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | 4. Loma Redonda.                                                  |";
+				Escribir"  |-------------------------------------------------------------------|";
+				Escribir"  | 5. Pico Espejo.                                                   |";
+				Escribir"  |-------------------------------------------------------------------|";
+				estacion:=readkey;
