@@ -15,48 +15,48 @@ precioExonerado: real = 0;
 begin
     clrscr;
     //La cantidad de tipos de boletos totales vendidos inicia siendo cero.
-    nBGeneralVendidos:=0;
-    nBTEdadNVendidos:=0;
-    nBExoneradosVendidos:=0;
+    nBGeneralVendidos:=0; //Numero total de boletos generales vendidos.
+    nBTEdadNVendidos:=0; //Numero total de boletos de tercera edad o niños vendidos.
+    nBExoneradosVendidos:=0; //Numero total de boletos exonerados vendidos.
     //La cantidad de tipos de boletos vendidos POR TRAMO inicia siendo cero.
-    generalAB:=0;
-    tEdadNAB:=0;
-    exoneradoAB:=0;
-    generalBC:=0;
-    tEdadNBC:=0;
-    exoneradoBC:=0;
-    generalCD:=0;
-    tEdadNCD:=0;
-    exoneradoCD:=0;
-    generalDE:=0;
-    tEdadNDE:=0;
-    exoneradoDE:=0;
+    generalAB:=0; //Numero de boletos generales vendidos en el tramo Barinitas - La Montaña.
+    tEdadNAB:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo Barinitas - La Montaña.
+    exoneradoAB:=0; //Numero de boletos exonerados vendidos en el tramo Barinitas - La Montaña.
+    generalBC:=0; //Numero de boletos generales vendidos en el tramo La Montaña - La Aguada.
+    tEdadNBC:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo La Montaña - La Aguada.
+    exoneradoBC:=0; //Numero de boletos exonerados vendidos en el tramo La Montaña - La Aguada.
+    generalCD:=0; //Numero de boletos generales vendidos en el tramo La Aguada - Loma Redonda.
+    tEdadNCD:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo La Aguada - Loma Redonda.
+    exoneradoCD:=0; //Numero de boletos exonerados vendidos en el tramo La Aguada - Loma Redonda.
+    generalDE:=0; //Numero de boletos generales vendidos en el tramo Loma Redonda - Pico Espejo.
+    tEdadNDE:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo Loma Redonda - Pico Espejo.
+    exoneradoDE:=0; //Numero de boletos exonerados vendidos en el tramo Loma Redonda - Pico Espejo.
     //La cantidad total de boletos vendidos inicia siendo cero.
-    nBTotalVendidos:=0;
+    nBTotalVendidos:=0; //Numero total de boletos vendidos.
     //Los asientos disponibles en cada tramo empiezan siendo 60;
-    aDisponiblesAB:=60;
-    aDisponiblesBC:=60;
-    aDisponiblesCD:=60;
-    aDisponiblesDE:=60;
+    aDisponiblesAB:=60; //Numero de asientos disponibles en el tramo Barinitas - La Montaña.
+    aDisponiblesBC:=60; //Numero de asientos disponibles en el tramo La Montaña - La Aguada.
+    aDisponiblesCD:=60; //Numero de asientos disponibles en el tramo La Aguada - Loma Redonda.
+    aDisponiblesDE:=60; //Numero de asientos disponibles en el tramo Loma Redonda - Pico Espejo.
     //Los montos totales de las ventas de tipo de boleto POR TRAMO inicia siendo cero.
-    VentaGeneralAB:=0;
-    VentaTEdadNAB:=0;
-    VentaExoneradoAB:=0;
-    VentaGeneralBC:=0;
-    VentaTEdadNBC:=0;
-    VentaExoneradoBC:=0;
-    VentaGeneralCD:=0;
-    VentaTEdadNCD:=0;
-    VentaExoneradoCD:=0;
-    VentaGeneralDE:=0;
-    VentaTEdadNDE:=0;
-    VentaExoneradoDE:=0;
+    VentaGeneralAB:=0; //Monto total de venta de boletos generales en el tramo Barinitas - La Montaña.
+    VentaTEdadNAB:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo Barinitas - La Montaña.
+    VentaExoneradoAB:=0; //Monto total de venta de boletos exonerados en el tramo Barinitas - La Montaña.
+    VentaGeneralBC:=0; //Monto total de venta de boletos generales en el tramo La Montaña - La Aguada.
+    VentaTEdadNBC:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo La Montaña - La Aguada.
+    VentaExoneradoBC:=0; //Monto total de venta de boletos exonerados en el tramo La Montaña - La Aguada.
+    VentaGeneralCD:=0; //Monto total de venta de boletos generales en el tramo La Aguada - Loma Redonda.
+    VentaTEdadNCD:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo La Aguada - Loma Redonda.
+    VentaExoneradoCD:=0; //Monto total de venta de boletos exonerados en el tramo La Aguada - Loma Redonda.
+    VentaGeneralDE:=0; //Monto total de venta de boletos generales en el tramo Loma Redonda - Pico Espejo.
+    VentaTEdadNDE:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo Loma Redonda - Pico Espejo.
+    VentaExoneradoDE:=0; //Monto total de venta de boletos exonerados en el tramo Loma Redonda - Pico Espejo.
     //El monto de las ventas de tipos de boletos totales inicia siendo cero.
-    VentaGeneralTotal:=0;
-    VentaTEdadNTotal:=0;
-    VentaExoneradoTotal:=0;
+    VentaGeneralTotal:=0; //Monto total de venta de boletos generales en todos los tramos.
+    VentaTEdadNTotal:=0; //Monto total de venta de boletos de tercera edad o niños en todos los tramos.
+    VentaExoneradoTotal:=0; //Monto total de venta de boletos exonerados en todos los tramos.
     //El monto de la venta total de los boletos inicia siendo cero.
-    ventaTotal:=0;
+    ventaTotal:=0; //Monto total de venta de todos los tipos de boletos en todos los tramos.
     writeln('  |---------------------------------------------------|');
     writeln('  |--¡Bienvenido al sistema de teleférico de Mérida!--|');
     repeat
@@ -193,23 +193,23 @@ begin
                     end;
                 until validNumDoc; //Sale del loop cuando se ingrese un numero sin letras ni caracteres especiales y que no empiece por o sea cero o menor.
                 ///////////////////// Valores iniciales de los datos para la factura
-                FprecioTotalCompra:=0;
-                FnBGeneralAB:=0;
-                FnBTEdadNAB:=0;
-                FnBExoneradosAB:=0;
-                FnBGeneralBC:=0;
-                FnBTEdadNBC:=0;
-                FnBExoneradosBC:=0;
-                FnBGeneralCD:=0;
-                FnBTEdadNCD:=0;
-                FnBExoneradosCD:=0;
-                FnBGeneralDE:=0;
-                FnBTEdadNDE:=0;
-                FnBExoneradosDE:=0;
-                TAB:=false;
-                TBC:=false;
-                TCD:=false;
-                TDE:=false;
+                FprecioTotalCompra:=0; //Precio total de compra a mostrar en la factura.
+                FnBGeneralAB:=0; //Numero de boletos generales en el tramo Barinitas - La Montaña a mostrar en la factura.
+                FnBTEdadNAB:=0; //Numero de boletos de tercera edad o niños en el tarmo Barinitas - La Montaña a mostrar en la factura.
+                FnBExoneradosAB:=0; //Numero de boletos exonerados en el tramo Barinitas - La Montaña a mostrar en la factura.
+                FnBGeneralBC:=0; //Numero de boletos generales en el tramo La Montaña - La Aguada a mostrar en la factura.
+                FnBTEdadNBC:=0; //Numero de boletos de tercera edad o niños en el tarmo La Montaña - La Aguada a mostrar en la factura.
+                FnBExoneradosBC:=0; //Numero de boletos exonerados en el tramo La Montaña - La Aguada a mostrar en la factura.
+                FnBGeneralCD:=0; //Numero de boletos generales en el tramo La Aguada - Loma Redonda a mostrar en la factura.
+                FnBTEdadNCD:=0; //Numero de boletos de tercera edad o niños en el tarmo La Aguada - Loma Redonda a mostrar en la factura.
+                FnBExoneradosCD:=0; //Numero de boletos exonerados en el tramo La Aguada - Loma Redonda a mostrar en la factura.
+                FnBGeneralDE:=0; //Numero de boletos generales en el tramo Loma Redonda - Pico Espejo a mostrar en la factura.
+                FnBTEdadNDE:=0; //Numero de boletos de tercera edad o niños en el tarmo Loma Redonda - Pico Espejo a mostrar en la factura.
+                FnBExoneradosDE:=0; //Numero de boletos exonerados en el tramo Loma Redonda - Pico Espejo a mostrar en la factura.
+                TAB:=false; //Booleano para determinar si el tramo Barinitas - La Montaña debe aparecer en la factura.
+                TBC:=false; //Booleano para determinar si el tramo La Montaña - La Aguada debe aparecer en la factura.
+                TCD:=false; //Booleano para determinar si el tramo La Aguada - Loma Redonda debe aparecer en la factura.
+                TDE:=false; //Booleano para determinar si el tramo Loma Redonda - Pico Espejo debe aparecer en la factura.
                 repeat
                     ////////////////////////////////////////////////////////////////////////////////ESTACION Y TRAMO
                     clrscr;
@@ -533,7 +533,7 @@ begin
                                                 clrscr;
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesBC,' disponibles):');
-                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesBC, el | este siempre en el mismo sitio.
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  |-> ');
                                                 readln(nBoletosStr);
@@ -692,7 +692,7 @@ begin
                                                 clrscr;
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesBC,' disponibles):');
-                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesBC, el | este siempre en el mismo sitio.
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  |-> ');
                                                 readln(nBoletosStr);
@@ -830,7 +830,7 @@ begin
                                                 clrscr;
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesCD,' disponibles):');
-                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesCD, el | este siempre en el mismo sitio.
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  |-> ');
                                                 readln(nBoletosStr);
@@ -989,7 +989,7 @@ begin
                                                 clrscr;
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesCD,' disponibles):');
-                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesCD, el | este siempre en el mismo sitio.
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  |-> ');
                                                 readln(nBoletosStr);
@@ -1127,7 +1127,7 @@ begin
                                                 clrscr;
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesDE,' disponibles):');
-                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                                gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesDE, el | este siempre en el mismo sitio.
                                                 writeln('  |--------------------------------------------------------------------------|');
                                                 write('  |-> ');
                                                 readln(nBoletosStr);
@@ -1281,7 +1281,7 @@ begin
                                     clrscr;
                                     writeln('  |--------------------------------------------------------------------------|');
                                     write('  | ¿Cuántos boletos desea comprar? (Quedan ',aDisponiblesDE,' disponibles):');
-                                    gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+                                    gotoXY(78, WhereY); writeln('|'); //Para que sin importar el valor de aDisponiblesDE, el | este siempre en el mismo sitio.
                                     writeln('  |--------------------------------------------------------------------------|');
                                     write('  |-> ');
                                     readln(nBoletosStr);

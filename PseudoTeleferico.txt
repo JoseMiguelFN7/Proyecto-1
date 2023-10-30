@@ -12,48 +12,48 @@ precioExonerado: real = 0;
 
 Limpiar pantalla;
 //La cantidad de tipos de boletos totales vendidos inicia siendo cero.
-nBGeneralVendidos=0;
-nBTEdadNVendidos=0;
-nBExoneradosVendidos=0;
+nBGeneralVendidos:=0; //Numero total de boletos generales vendidos.
+nBTEdadNVendidos:=0; //Numero total de boletos de tercera edad o niños vendidos.
+nBExoneradosVendidos:=0; //Numero total de boletos exonerados vendidos.
 //La cantidad de tipos de boletos vendidos POR TRAMO inicia siendo cero.
-generalAB=0;
-tEdadNAB=0;
-exoneradoAB=0;
-generalBC=0;
-tEdadNBC=0;
-exoneradoBC=0;
-generalCD=0;
-tEdadNCD=0;
-exoneradoCD=0;
-generalDE=0;
-tEdadNDE=0;
-exoneradoDE=0;
+generalAB:=0; //Numero de boletos generales vendidos en el tramo Barinitas - La Montaña.
+tEdadNAB:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo Barinitas - La Montaña.
+exoneradoAB:=0; //Numero de boletos exonerados vendidos en el tramo Barinitas - La Montaña.
+generalBC:=0; //Numero de boletos generales vendidos en el tramo La Montaña - La Aguada.
+tEdadNBC:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo La Montaña - La Aguada.
+exoneradoBC:=0; //Numero de boletos exonerados vendidos en el tramo La Montaña - La Aguada.
+generalCD:=0; //Numero de boletos generales vendidos en el tramo La Aguada - Loma Redonda.
+tEdadNCD:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo La Aguada - Loma Redonda.
+exoneradoCD:=0; //Numero de boletos exonerados vendidos en el tramo La Aguada - Loma Redonda.
+generalDE:=0; //Numero de boletos generales vendidos en el tramo Loma Redonda - Pico Espejo.
+tEdadNDE:=0; //Numero de boletos de tercera edad o niños vendidos en el tramo Loma Redonda - Pico Espejo.
+exoneradoDE:=0; //Numero de boletos exonerados vendidos en el tramo Loma Redonda - Pico Espejo.
 //La cantidad total de boletos vendidos inicia siendo cero.
-nBTotalVendidos=0;
+nBTotalVendidos:=0; //Numero total de boletos vendidos.
 //Los asientos disponibles en cada tramo empiezan siendo 60;
-aDisponiblesAB=60;
-aDisponiblesBC=60;
-aDisponiblesCD=60;
-aDisponiblesDE=60;
+aDisponiblesAB:=60; //Numero de asientos disponibles en el tramo Barinitas - La Montaña.
+aDisponiblesBC:=60; //Numero de asientos disponibles en el tramo La Montaña - La Aguada.
+aDisponiblesCD:=60; //Numero de asientos disponibles en el tramo La Aguada - Loma Redonda.
+aDisponiblesDE:=60; //Numero de asientos disponibles en el tramo Loma Redonda - Pico Espejo.
 //Los montos totales de las ventas de tipo de boleto POR TRAMO inicia siendo cero.
-VentaGeneralAB=0;
-VentaTEdadNAB=0;
-VentaExoneradoAB=0;
-VentaGeneralBC=0;
-VentaTEdadNBC=0;
-VentaExoneradoBC=0;
-VentaGeneralCD=0;
-VentaTEdadNCD=0;
-VentaExoneradoCD=0;
-VentaGeneralDE=0;
-VentaTEdadNDE=0;
-VentaExoneradoDE=0;
+VentaGeneralAB:=0; //Monto total de venta de boletos generales en el tramo Barinitas - La Montaña.
+VentaTEdadNAB:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo Barinitas - La Montaña.
+VentaExoneradoAB:=0; //Monto total de venta de boletos exonerados en el tramo Barinitas - La Montaña.
+VentaGeneralBC:=0; //Monto total de venta de boletos generales en el tramo La Montaña - La Aguada.
+VentaTEdadNBC:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo La Montaña - La Aguada.
+VentaExoneradoBC:=0; //Monto total de venta de boletos exonerados en el tramo La Montaña - La Aguada.
+VentaGeneralCD:=0; //Monto total de venta de boletos generales en el tramo La Aguada - Loma Redonda.
+VentaTEdadNCD:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo La Aguada - Loma Redonda.
+VentaExoneradoCD:=0; //Monto total de venta de boletos exonerados en el tramo La Aguada - Loma Redonda.
+VentaGeneralDE:=0; //Monto total de venta de boletos generales en el tramo Loma Redonda - Pico Espejo.
+VentaTEdadNDE:=0; //Monto total de venta de boletos de tercera edad o niños en el tramo Loma Redonda - Pico Espejo.
+VentaExoneradoDE:=0; //Monto total de venta de boletos exonerados en el tramo Loma Redonda - Pico Espejo.
 //El monto de las ventas de tipos de boletos totales inicia siendo cero.
-VentaGeneralTotal=0;
-VentaTEdadNTotal=0;
-VentaExoneradoTotal=0;
+VentaGeneralTotal:=0; //Monto total de venta de boletos generales en todos los tramos.
+VentaTEdadNTotal:=0; //Monto total de venta de boletos de tercera edad o niños en todos los tramos.
+VentaExoneradoTotal:=0; //Monto total de venta de boletos exonerados en todos los tramos.
 //El monto de la venta total de los boletos inicia siendo cero.
-ventaTotal=0;
+ventaTotal:=0; //Monto total de venta de todos los tipos de boletos en todos los tramos.
 Escribir "  |---------------------------------------------------|";
 Escribir "  |--¡Bienvenido al sistema de teleférico de Mérida!--|";
 Repetir
@@ -87,7 +87,7 @@ Repetir
 					Escribir "  |---------------------------------------|";
 					delay(2000);
 				Sino 
-					Para i=2 hasta longitud(nombre)
+					Para i=2 hasta longitud(nombre); i=i+1
 						Si no (nombre[i] está en el rango de "a" a "z")//Si la entrada tiene numeros, caracteres especiales o una mayuscula en el medio, no lo acepta.
 							validNombre=false;
 							gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de nombre, el | este siempre en el mismo sitio.
@@ -121,7 +121,7 @@ Repetir
 					Escribir "  |---------------------------------------|";
 					delay(2000);
 				Sino 
-					Para i=2 hasta longitud(apellido)
+					Para i=2 hasta longitud(apellido); i=i+1
 						Si no (apellido[i] está en el rango de "a" a "z")//Si la entrada tiene numeros, caracteres especiales o una mayuscula en el medio, no lo acepta.
 							validApellido=false;
 							gotoXY(43, WhereY-1); Escribir('|'); //Para que sin importar el valor de nombre, el | este siempre en el mismo sitio.
@@ -165,7 +165,7 @@ Repetir
 					Escribir"  |---------------------------------------------------------------------|";
 					delay(2000);
 				Sino
-					Para i=1 hasta longitud(numDoc)
+					Para i=1 hasta longitud(numDoc); i=i+1
 						Si no (numDoc[i] está en el rango de "0" a "9")//Si la entrada contiene algo que no es un numero, sera rechazada.
 							validNumDoc=false;
 							gotoXY(73, WhereY-1); Escribir('|'); //Para que sin importar el valor de numDoc, el | este siempre en el mismo sitio.
@@ -180,23 +180,23 @@ Repetir
 				Fin Si
 			Hasta validNumDoc; //Sale del loop cuando se ingrese un numero sin letras ni caracteres especiales y que no empiece por o sea cero o menor.
 			///////////////////// Valores iniciales de los datos para la factura
-			FprecioTotalCompra=0;
-                	FnBGeneralAB=0;
-                	FnBTEdadNAB=0;
-                	FnBExoneradosAB=0;
-                	FnBGeneralBC=0;
-                	FnBTEdadNBC=0;
-                	FnBExoneradosBC=0;
-                	FnBGeneralCD:=0;
-                	FnBTEdadNCD=0;
-                	FnBExoneradosCD=0;
-                	FnBGeneralDE=0;
-                	FnBTEdadNDE=0;
-                	FnBExoneradosDE=0;
-                	TAB=false;
-                	TBC=false;
-                	TCD=false;
-                	TDE=false;
+                	FprecioTotalCompra:=0; //Precio total de compra a mostrar en la factura.
+                	FnBGeneralAB:=0; //Numero de boletos generales en el tramo Barinitas - La Montaña a mostrar en la factura.
+                	FnBTEdadNAB:=0; //Numero de boletos de tercera edad o niños en el tarmo Barinitas - La Montaña a mostrar en la factura.
+                	FnBExoneradosAB:=0; //Numero de boletos exonerados en el tramo Barinitas - La Montaña a mostrar en la factura.
+                	FnBGeneralBC:=0; //Numero de boletos generales en el tramo La Montaña - La Aguada a mostrar en la factura.
+                	FnBTEdadNBC:=0; //Numero de boletos de tercera edad o niños en el tarmo La Montaña - La Aguada a mostrar en la factura.
+                	FnBExoneradosBC:=0; //Numero de boletos exonerados en el tramo La Montaña - La Aguada a mostrar en la factura.
+                	FnBGeneralCD:=0; //Numero de boletos generales en el tramo La Aguada - Loma Redonda a mostrar en la factura.
+                	FnBTEdadNCD:=0; //Numero de boletos de tercera edad o niños en el tarmo La Aguada - Loma Redonda a mostrar en la factura.
+                	FnBExoneradosCD:=0; //Numero de boletos exonerados en el tramo La Aguada - Loma Redonda a mostrar en la factura.
+                	FnBGeneralDE:=0; //Numero de boletos generales en el tramo Loma Redonda - Pico Espejo a mostrar en la factura.
+                	FnBTEdadNDE:=0; //Numero de boletos de tercera edad o niños en el tarmo Loma Redonda - Pico Espejo a mostrar en la factura.
+                	FnBExoneradosDE:=0; //Numero de boletos exonerados en el tramo Loma Redonda - Pico Espejo a mostrar en la factura.
+                	TAB:=false; //Booleano para determinar si el tramo Barinitas - La Montaña debe aparecer en la factura.
+                	TBC:=false; //Booleano para determinar si el tramo La Montaña - La Aguada debe aparecer en la factura.
+                	TCD:=false; //Booleano para determinar si el tramo La Aguada - Loma Redonda debe aparecer en la factura.
+                	TDE:=false; //Booleano para determinar si el tramo Loma Redonda - Pico Espejo debe aparecer en la factura.
 			Repetir
 				////////////////////////////////////////////////////////////////////////////////ESTACION Y TRAMO
 				Limpiar pantalla;
@@ -213,4 +213,1128 @@ Repetir
 				Escribir"  |-------------------------------------------------------------------|";
 				Escribir"  | 5. Pico Espejo.                                                   |";
 				Escribir"  |-------------------------------------------------------------------|";
-				estacion:=readkey;
+				estacion=readkey;
+				Segun estacion Hacer //Pide el tramo en base a la estacion ingresada.
+					/////////////////////////////////////////////////////////////////////////////////// BARINITAS.
+					Caso, =1
+						Limpiar pantalla;
+						Escribir"  |-------------------------------------------------------------------------|";
+						Escribir"  | El único tramo disponible para esta estación es Barinitas - La Montaña. |";//AB
+						Escribir"  |-------------------------------------------------------------------------|";
+						Escribir"  | Presione cualquier tecla para continuar...                              |";
+						Escribir"  |-------------------------------------------------------------------------|";
+						readkey;
+						Si aDisponiblesAB>0
+							Repetir
+								Limpiar pantalla;
+								Escribir"  |--------------------------------------------------------------------------|";
+								Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesAB," disponibles):";
+								gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+								Escribir"  |--------------------------------------------------------------------------|";
+								Escribir"  |-> ";
+								Leer (nBoletosStr);
+								val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+								Si ((error<>0) o (nBoletos<=0) o (aDisponiblesAB<nBoletos)) //Si la entrada es int menor o igual a cero o si no hay asientos suficientes, no lo acepta.
+									gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+									Escribir"  |--------------------------------------------------------------------------|";
+									Escribir"  | El dato ingresado no es válido.                                          |";
+									Escribir"  |--------------------------------------------------------------------------|";
+									delay(2000);
+								Fin Si
+							Hasta ((error=0) y (nBoletos>0) y (aDisponiblesAB>=nBoletos));
+							Para i=1 hasta nBoletos; i=i+1
+								Repetir
+									Limpiar pantalla;
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 "; //Para determinar el tipo de boleto que se comprara
+									gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 1. Niño/a.                                                                    |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 2. Persona de la tercera edad.                                                |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 3. Ninguno de los dos.                                                        |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									tBoleto=readkey;
+									Segun tBoleto Hacer
+										Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  |-> ";
+												Leer"edad";
+												val(edad, edadInt, error);
+												gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+												Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | El dato ingresado no es válido.                  |";
+													Escribir"  |--------------------------------------------------|";
+													delay(2000);
+												Fin Si
+											Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+											Si (edadInt<3) //Exonerado.
+												precioBoleto=precioExonerado;
+                                                    						exoneradoAB+=1; //Contador general.
+                                                    						FnBExoneradosAB+=1; //Contador para factura.
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+											Sino 
+												Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+													precioBoleto=precioTEdadN;
+													tEdadNAB+=1; //Contador general.
+                                                        						FnBTEdadNAB+=1; //Contador para factura.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+												Sino //General.
+													precioBoleto:=precioGeneral;
+                                                        						generalAB+=1; //Contador general.
+                                                        						FnBGeneralAB+=1; //Contador para factura.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | Tipo de boleto adquirido: General.               |";
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+												Fin Sino
+												Fin Si
+											Fin Sino
+											Fin Si
+										Caso, =2 //Tercera edad.
+											Limpiar pantalla;
+											precioBoleto=precioTEdadN;
+                                                					tEdadNAB+=1; //Contador general.
+                                                					FnBTEdadNAB+=1; //Contador para factura.
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+										Caso, =3 //General.
+											Limpiar pantalla;
+											precioBoleto=precioGeneral;
+                                                					generalAB+=1; //Contador general.
+                                                					FnBGeneralAB+=1; //Contador para factura.
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Tipo de boleto adquirido: General.               |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+										Caso, =Sino
+											Escribir"  | El dato ingresado no es válido.                                               |";
+											Escribir"  |-------------------------------------------------------------------------------|";
+											delay(2000);
+										Fin Sino
+									Fin Segun
+								Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+								FprecioTotalCompra+= precioBoleto;
+								gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+								Escribir"  |--------------------------------------------------|";
+								delay(1000);
+								Escribir"  | ¡Boleto confirmado!                              |";
+								Escribir"  |--------------------------------------------------|";
+								Escribir"  | Presione cualquier tecla para continuar...       |";
+								Escribir"  |--------------------------------------------------|";
+								readkey;
+							Fin Para
+							aDisponiblesAB-=nBoletos;
+							Si no (TAB)
+								TAB=true;
+							Fin Si
+						Sino
+							Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+							Escribir"  |-------------------------------------------------------------------------|";
+							delay(2000);
+							Limpiar pantalla;
+						Fin Sino
+						Fin Si
+					////////////////////////////////////////////////////////////////////////////////// LA MONTAÑA.
+					Caso, =2
+						Repetir
+							Limpiar pantalla;
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | Por favor, indique el tramo para el que quiere comprar boleto: |";
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 1. Barinitas - La Montaña.                                     |";//AB
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 2. La Montaña - La Aguada.                                     |";
+							Escribir"  |----------------------------------------------------------------|";//BC
+							tramo=readkey;
+							Segun tramo Hacer
+								Caso, =1 //Tramo AB.
+									Si (aDisponiblesAB>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesAB," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesAB, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesAB<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesAB>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoAB+=1; //Contador general.
+                                                    									FnBExoneradosAB+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNAB+=1; //Contador general.
+                                                        									FnBTEdadNAB+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalAB+=1; //Contador general.
+                                                        									FnBGeneralAB+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNAB+=1; //Contador general.
+                                                								FnBTEdadNAB+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalAB+=1; //Contador general.
+                                                								FnBGeneralAB+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesAB-=nBoletos;
+										Si no (TAB)
+											TAB=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =2 //Tramo BC.
+									Si (aDisponiblesBC>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesBC," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesBC, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesBC<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesBC>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoBC+=1; //Contador general.
+                                                    									FnBExoneradosBC+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNBC+=1; //Contador general.
+                                                        									FnBTEdadNBC+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalBC+=1; //Contador general.
+                                                        									FnBGeneralBC+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNBC+=1; //Contador general.
+                                                								FnBTEdadNBC+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalBC+=1; //Contador general.
+                                                								FnBGeneralBC+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesBC-=nBoletos;
+										Si no (TBC)
+											TBC=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =Sino
+									Escribir"  | El dato ingresado no es válido.                                |";
+									Escribir"  |----------------------------------------------------------------|";
+									delay(2000);
+								Fin Sino
+							Fin Segun
+						Hasta (tramo esta entre ["1", "2"]);
+					/////////////////////////////////////////////////////////////////////////////////// LA AGUADA.
+					Caso, =3
+						Repetir
+							Limpiar pantalla;
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | Por favor, indique el tramo para el que quiere comprar boleto: |";
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 1. La Montaña - La Aguada.                                     |";//BC
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 2. La Aguada - Loma Redonda.                                   |";//CD
+							Escribir"  |----------------------------------------------------------------|";
+							tramo=readkey;
+							Segun tramo Hacer
+								Caso, =1 //Tramo BC.
+									Si (aDisponiblesBC>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesBC," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesBC, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesBC<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesBC>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoBC+=1; //Contador general.
+                                                    									FnBExoneradosBC+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNBC+=1; //Contador general.
+                                                        									FnBTEdadNBC+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalBC+=1; //Contador general.
+                                                        									FnBGeneralBC+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNBC+=1; //Contador general.
+                                                								FnBTEdadNBC+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalBC+=1; //Contador general.
+                                                								FnBGeneralBC+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesBC-=nBoletos;
+										Si no (TBC)
+											TBC=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =2 //Tramo CD.
+									Si (aDisponiblesCD>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesCD," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesCD, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesCD<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesCD>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoCD+=1; //Contador general.
+                                                    									FnBExoneradosCD+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNCD+=1; //Contador general.
+                                                        									FnBTEdadNCD+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalCD+=1; //Contador general.
+                                                        									FnBGeneralCD+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNCD+=1; //Contador general.
+                                                								FnBTEdadNCD+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalCD+=1; //Contador general.
+                                                								FnBGeneralCD+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesCD-=nBoletos;
+										Si no (TCD)
+											TCD=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =Sino
+									Escribir"  | El dato ingresado no es válido.                                |";
+									Escribir"  |----------------------------------------------------------------|";
+									delay(2000);
+								Fin Sino
+							Fin Segun
+						Hasta (tramo esta entre ["1", "2"]);
+					////////////////////////////////////////////////////////////////////////////////LOMA REDONDA.
+					Caso, =4
+						Repetir
+							Limpiar pantalla;
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | Por favor, indique el tramo para el que quiere comprar boleto: |";
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 1. La Aguada - Loma Redonda.                                   |";//CD
+							Escribir"  |----------------------------------------------------------------|";
+							Escribir"  | 2. Loma Redonda - Pico Espejo.                                 |";//DE
+							Escribir"  |----------------------------------------------------------------|";
+							tramo=readkey;
+							Segun tramo Hacer
+								Caso, =1 //Tramo CD.
+									Si (aDisponiblesCD>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesCD," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesCD, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesCD<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesCD>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoCD+=1; //Contador general.
+                                                    									FnBExoneradosCD+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNCD+=1; //Contador general.
+                                                        									FnBTEdadNCD+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalCD+=1; //Contador general.
+                                                        									FnBGeneralCD+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNCD+=1; //Contador general.
+                                                								FnBTEdadNCD+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalCD+=1; //Contador general.
+                                                								FnBGeneralCD+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesCD-=nBoletos;
+										Si no (TCD)
+											TCD=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =2 //Tramo DE.
+									Si (aDisponiblesDE>0)
+										Repetir
+											Limpiar pantalla;
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesDE," disponibles):";
+											gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesDE, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------------------------------|";
+											Escribir"  |-> ";
+											Leer"nBoletosStr";
+											val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+											Si ((error<>0) o (nBoletos<=0) o (aDisponiblesDE<nBoletos))
+												gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+												Escribir"  |--------------------------------------------------------------------------|";
+												Escribir"  | El dato ingresado no es válido.                                          |";
+												Escribir"  |--------------------------------------------------------------------------|";
+												delay(2000);
+											Fin Si
+										Hasta ((error=0) y (nBoletos>0) y (aDisponiblesDE>nBoletos));
+										Para i=1 to nBoletos; i=i+1
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 ";
+												gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 1. Niño/a.                                                                    |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 2. Persona de la tercera edad.                                                |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												Escribir"  | 3. Ninguno de los dos.                                                        |";
+												Escribir"  |-------------------------------------------------------------------------------|";
+												tBoleto=readkey;
+												Segun tBoleto Hacer
+													Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+														Repetir
+															Limpiar pantalla;
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> ";
+															Leer"edad";
+															val(edad, edadInt, error);
+															gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+															Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | El dato ingresado no es válido.                  |";
+																Escribir"  |--------------------------------------------------|";
+																delay(2000);
+															Fin Si
+														Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+														Si (edadInt<3) //Exonerado.
+															precioBoleto=precioExonerado;
+                                                    									exoneradoDE+=1; //Contador general.
+                                                    									FnBExoneradosDE+=1; //Contador para factura.
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+															Escribir"  |--------------------------------------------------|";
+															Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+														Sino 
+															Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+																precioBoleto=precioTEdadN;
+																tEdadNDE+=1; //Contador general.
+                                                        									FnBTEdadNDE+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+															Sino //General.
+																precioBoleto:=precioGeneral;
+                                                        									generalDE+=1; //Contador general.
+                                                        									FnBGeneralDE+=1; //Contador para factura.
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  | Tipo de boleto adquirido: General.               |";
+																Escribir"  |--------------------------------------------------|";
+																Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+															Fin Sino
+															Fin Si
+														Fin Sino
+														Fin Si
+													Caso, =2 //Tercera edad.
+														Limpiar pantalla;
+														precioBoleto=precioTEdadN;
+                                                								tEdadNDE+=1; //Contador general.
+                                                								FnBTEdadNDE+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =3 //General.
+														Limpiar pantalla;
+														precioBoleto=precioGeneral;
+                                                								generalDE+=1; //Contador general.
+                                                								FnBGeneralDE+=1; //Contador para factura.
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  | Tipo de boleto adquirido: General.               |";
+														Escribir"  |--------------------------------------------------|";
+														Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+													Caso, =Sino
+														Escribir"  | El dato ingresado no es válido.                                               |";
+														Escribir"  |-------------------------------------------------------------------------------|";
+														delay(2000);
+													Fin Sino
+												Fin Segun
+											Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+											FprecioTotalCompra+= precioBoleto;
+											gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+											Escribir"  |--------------------------------------------------|";
+											delay(1000);
+											Escribir"  | ¡Boleto confirmado!                              |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Presione cualquier tecla para continuar...       |";
+											Escribir"  |--------------------------------------------------|";
+											readkey;
+										Fin Para
+										aDisponiblesDE-=nBoletos;
+										Si no (TDE)
+											TDE=true;
+										Fin Si
+									Sino
+										Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+										Escribir"  |-------------------------------------------------------------------------|";
+										delay(2000);
+										Limpiar pantalla;
+									Fin Sino
+									Fin Si
+								Caso, =Sino
+									Escribir"  | El dato ingresado no es válido.                                |";
+									Escribir"  |----------------------------------------------------------------|";
+									delay(2000);
+								Fin Sino
+							Fin Segun
+						Hasta (tramo esta entre ["1", "2"]);
+					//////////////////////////////////////////////////////////////////////////////// PICO ESPEJO.
+					Caso, =5
+						Limpiar pantalla;
+						Escribir"  |-----------------------------------------------------------------------------|";
+						Escribir"  | El unico tramo disponible para esta estación es Loma Redonda - Pico Espejo. |";//DE
+						Escribir"  |-----------------------------------------------------------------------------|";
+						Escribir"  | Presione cualquier tecla para continuar...                                  |";
+						Escribir"  |-----------------------------------------------------------------------------|";
+						readkey;
+						Si aDisponiblesDE>0
+							Repetir
+								Limpiar pantalla;
+								Escribir"  |--------------------------------------------------------------------------|";
+								Escribir"  | ¿Cuántos boletos desea comprar? (Quedan ",aDisponiblesDE," disponibles):";
+								gotoXY(78, WhereY); Escribir('|'); //Para que sin importar el valor de aDisponiblesDE, el | este siempre en el mismo sitio.
+								Escribir"  |--------------------------------------------------------------------------|";
+								Escribir"  |-> ";
+								Leer (nBoletosStr);
+								val(nBoletosStr, nBoletos, error); //Para validar si es un dato valido.
+								Si ((error<>0) o (nBoletos<=0) o (aDisponiblesDE<nBoletos)) //Si la entrada es int menor o igual a cero o si no hay asientos suficientes, no lo acepta.
+									gotoXY(78, WhereY-1); Escribir('|'); //Para que sin importar el valor de nBoletos, el | este siempre en el mismo sitio.
+									Escribir"  |--------------------------------------------------------------------------|";
+									Escribir"  | El dato ingresado no es válido.                                          |";
+									Escribir"  |--------------------------------------------------------------------------|";
+									delay(2000);
+								Fin Si
+							Hasta ((error=0) y (nBoletos>0) y (aDisponiblesDE>=nBoletos));
+							Para i=1 hasta nBoletos; i=i+1
+								Repetir
+									Limpiar pantalla;
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | Datos necesarios para la compra del boleto ", i, ":                                 "; //Para determinar el tipo de boleto que se comprara
+									gotoXY(83, WhereY); Escribir('|'); //Para que sin importar el valor de i, el | este siempre en el mismo sitio.
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | ¿La persona que usará este boleto es un niño/a o persona de la tercera edad?: |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 1. Niño/a.                                                                    |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 2. Persona de la tercera edad.                                                |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									Escribir"  | 3. Ninguno de los dos.                                                        |";
+									Escribir"  |-------------------------------------------------------------------------------|";
+									tBoleto=readkey;
+									Segun tBoleto Hacer
+										Caso, =1 //Niño/a (Puede ser general o 3ra edad dependiendo de la edad ingresada.)
+											Repetir
+												Limpiar pantalla;
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  | Por favor, ingrese la edad del niño/a:           |";
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  |-> ";
+												Leer"edad";
+												val(edad, edadInt, error);
+												gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de edad, el | este siempre en el mismo sitio.
+												Si ((error<>0) o (edad[1]="0") o (edadInt<=0))//Si el dato ingresado no es int, empieza o es cero, o es negativo, no lo acepta.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | El dato ingresado no es válido.                  |";
+													Escribir"  |--------------------------------------------------|";
+													delay(2000);
+												Fin Si
+											Hasta ((error=0) y (edad[1]<>"0") y (edadInt>0));
+											Si (edadInt<3) //Exonerado.
+												precioBoleto=precioExonerado;
+                                                    						exoneradoDE+=1; //Contador general.
+                                                    						FnBExoneradosDE+=1; //Contador para factura.
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  | Tipo de boleto adquirido: Exonerado.             |";
+												Escribir"  |--------------------------------------------------|";
+												Escribir"  |-> Precio: "', precioExonerado:0:2, "$.";
+											Sino 
+												Si ((edadInt<=12) o (edadInt>60)) //Niño/a o Tercera edad.
+													precioBoleto=precioTEdadN;
+													tEdadNDE+=1; //Contador general.
+                                                        						FnBTEdadNDE+=1; //Contador para factura.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+												Sino //General.
+													precioBoleto:=precioGeneral;
+                                                        						generalDE+=1; //Contador general.
+                                                        						FnBGeneralDE+=1; //Contador para factura.
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  | Tipo de boleto adquirido: General.               |";
+													Escribir"  |--------------------------------------------------|";
+													Escribir"  |-> Precio: ", precioGeneral:0:2, "$.";
+												Fin Sino
+												Fin Si
+											Fin Sino
+											Fin Si
+										Caso, =2 //Tercera edad.
+											Limpiar pantalla;
+											precioBoleto=precioTEdadN;
+                                                					tEdadNDE+=1; //Contador general.
+                                                					FnBTEdadNDE+=1; //Contador para factura.
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Tipo de boleto adquirido: Niños o tercera edad.  |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+										Caso, =3 //General.
+											Limpiar pantalla;
+											precioBoleto=precioGeneral;
+                                                					generalDE+=1; //Contador general.
+                                                					FnBGeneralDE+=1; //Contador para factura.
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  | Tipo de boleto adquirido: General.               |";
+											Escribir"  |--------------------------------------------------|";
+											Escribir"  |-> Precio: ", precioTEdadN:0:2, "$.";
+										Caso, =Sino
+											Escribir"  | El dato ingresado no es válido.                                               |";
+											Escribir"  |-------------------------------------------------------------------------------|";
+											delay(2000);
+										Fin Sino
+									Fin Segun
+								Hasta (tBoleto esta dentro de ["1", "2", "3"]);
+								FprecioTotalCompra+= precioBoleto;
+								gotoXY(54, WhereY-1); Escribir('|'); //Para que sin importar el valor de precio, el | este siempre en el mismo sitio.
+								Escribir"  |--------------------------------------------------|";
+								delay(1000);
+								Escribir"  | ¡Boleto confirmado!                              |";
+								Escribir"  |--------------------------------------------------|";
+								Escribir"  | Presione cualquier tecla para continuar...       |";
+								Escribir"  |--------------------------------------------------|";
+								readkey;
+							Fin Para
+							aDisponiblesDE-=nBoletos;
+							Si no (TDE)
+								TDE=true;
+							Fin Si
+						Sino
+							Escribir"  | Este tramo no tiene asientos disponibles.                               |";
+							Escribir"  |-------------------------------------------------------------------------|";
+							delay(2000);
+							Limpiar pantalla;
+						Fin Sino
+						Fin Si
+					Caso, =Sino
+						Escribir"  | El dato ingresado no es válido.                                   |";
+						Escribir"  |-------------------------------------------------------------------|";
+						delay(2000);
+					Fin Sino
+				Fin Segun
+				Si (estacion esta entre ["1", "2", "3", "4", "5"])
+					Repetir
+						Limpiar pantalla;
+						Escribir"  |-----------------------------------|";
+						Escribir"  | ¿Desea comprar otro boleto? (S/N) |";
+						Escribir"  |-----------------------------------|";
+						otro=readkey;
+						Si no (otro esta entre ["S", "s", "N", "n"])
+							Escribir"  | El dato ingresado no es válido.   |";
+							Escribir"  |-----------------------------------|";
+							delay(2000);
+						Fin Si
+					Hasta (otro esta entre ["S", "s", "N", "n"]);
+				Fin Si
+			Hasta ((estacion esta entre ["1", "2", "3", "4", "5"]) y (otro esta entre ["N", "n"]));
+			Limpiar pantalla;
+			////////////////////////////////////////////////////////////////////////////////////////FACTURA.
