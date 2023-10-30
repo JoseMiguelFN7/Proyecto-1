@@ -1338,3 +1338,215 @@ Repetir
 			Hasta ((estacion esta entre ["1", "2", "3", "4", "5"]) y (otro esta entre ["N", "n"]));
 			Limpiar pantalla;
 			////////////////////////////////////////////////////////////////////////////////////////FACTURA.
+			Escribir"   Generando factura";
+			Para i=1 hasta 3; i=i+1
+				Escribir".";
+				delay(1000);
+			Fin Para
+			Limpiar pantalla;
+			Escribir"  |---------------------------------------------------------------|";
+			Escribir"  |----------------------------Factura----------------------------|";
+			Escribir"  |                      Teleférico de Merida                     |";
+			Escribir"  | Nombre y Apellido: ", nombre, " ", apellido"; gotoXY(67, WhereY-1); Escribir('|');
+			Escribir"  | Documento: ', tDoc, '-', numDoc"; gotoXY(67, WhereY-1); Escribir('|');
+			Escribir"  |---------------------------------------------------------------|";
+			Si TAB
+				Escribir"  | Tramo Barinitas - La Montaña.                                 |";
+				Si (FnGeneralAB>0)
+					Escribir"  | Boletos Generales:                 ", FnBGeneralAB, " x", precioGeneral:0:2, "$.         ", (FnBGeneralAB*precioGeneral):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnBTEdadNAB>0)
+					Escribir"  | Boletos Tercera Edad o Niños:      ", FnBTEdadNAB, " x", precioTEdadN:0:2, "$.         ", (FnBTEdadNAB*precioTEdadN):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnExoneradosAB>0)
+					Escribir"  | Boletos Exonerados:                ", FnBExoneradosAB, " x", precioExonerado:0:2, "$.          ", (FnBExoneradosAB*precioExonerado):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Escribir"  |---------------------------------------------------------------|";
+			Fin Si
+			Si TBC
+				Escribir"  | Tramo La Montaña - La Aguada.                                 |";
+				Si (FnGeneralBC>0)
+					Escribir"  | Boletos Generales:                 ", FnBGeneralBC, " x", precioGeneral:0:2, "$.         ", (FnBGeneralBC*precioGeneral):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnBTEdadNBC>0)
+					Escribir"  | Boletos Tercera Edad o Niños:      ", FnBTEdadNBC, " x", precioTEdadN:0:2, "$.         ", (FnBTEdadNBC*precioTEdadN):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnExoneradosBC>0)
+					Escribir"  | Boletos Exonerados:                ", FnBExoneradosBC, " x", precioExonerado:0:2, "$.          ", (FnBExoneradosBC*precioExonerado):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Escribir"  |---------------------------------------------------------------|";
+			Fin Si
+			Si TCD
+				Escribir"  | Tramo La Aguada - Loma Redonda.                               |";
+				Si (FnGeneralCD>0)
+					Escribir"  | Boletos Generales:                 ", FnBGeneralCD, " x", precioGeneral:0:2, "$.         ", (FnBGeneralCD*precioGeneral):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnBTEdadNCD>0)
+					Escribir"  | Boletos Tercera Edad o Niños:      ", FnBTEdadNCD, " x", precioTEdadN:0:2, "$.         ", (FnBTEdadNCD*precioTEdadN):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnExoneradosCD>0)
+					Escribir"  | Boletos Exonerados:                ", FnBExoneradosCD, " x", precioExonerado:0:2, "$.          ", (FnBExoneradosCD*precioExonerado):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Escribir"  |---------------------------------------------------------------|";
+			Fin Si
+			Si TDE
+				Escribir"  | Tramo Loma Redonda - Pico Espejo.                             |";
+				Si (FnGeneralDE>0)
+					Escribir"  | Boletos Generales:                 ", FnBGeneralDE, " x", precioGeneral:0:2, "$.         ", (FnBGeneralDE*precioGeneral):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnBTEdadNDE>0)
+					Escribir"  | Boletos Tercera Edad o Niños:      ", FnBTEdadNDE, " x", precioTEdadN:0:2, "$.         ", (FnBTEdadNDE*precioTEdadN):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Si (FnExoneradosDE>0)
+					Escribir"  | Boletos Exonerados:                ", FnBExoneradosDE, " x", precioExonerado:0:2, "$.          ", (FnBExoneradosDE*precioExonerado):0:2, "$."); gotoXY(67, WhereY-1); Escribir('|');
+				Fin Si
+				Escribir"  |---------------------------------------------------------------|";
+			Fin Si
+			Escribir"  |                                               TOTAL: ", FprecioTotalCompra:0:2, "$."); gotoXY(67, WhereY-1); writeln('|');
+			Escribir"  |---------------------------------------------------------------|";
+			Escribir"  | Presione cualquier tecla para continuar...                    |";
+			Escribir"  |---------------------------------------------------------------|";'
+			readkey;
+			Limpiar pantalla;
+		//////////////////////////////////////////////////////////////////////////////////////////// VER SISTEMA.
+		Caso, =2
+			Repetir
+				Limpiar pantalla;
+				Escribir"  |--------------------------------------------------|";
+				Escribir"  | Por favor, indique la opción que desea realizar. |";
+				Escribir"  |--------------------------------------------------|";
+				Escribir"  | 1. Ver cantidad de boletos vendidos.             |";
+				Escribir"  |--------------------------------------------------|";
+				Escribir"  | 2. Ver número de asientos disponibles.           |";
+				Escribir"  |--------------------------------------------------|";
+				Escribir"  | 3. Generar reporte de ventas.                    |";
+				Escribir"  |--------------------------------------------------|";
+				systemOp=readkey;
+				Segun systemOp Hacer
+					Caso, =1
+						Limpiar pantalla;
+						nBGeneralVendidos:= generalAB + generalBC + generalCD + generalDE;
+                            			nBTEdadNVendidos:= tEdadNAB + tEdadNBC + tEdadNCD + tEdadNDE;
+                            			nBExoneradosVendidos:= exoneradoAB + exoneradoBC + exoneradoCD + exoneradoDE;
+                            			nBTotalVendidos:= nBGeneralVendidos+ nBTEdadNVendidos + nBExoneradosVendidos;
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  |     Número de boletos vendidos en cada tramo:     |";
+						Escribir"  | Tramo Barinitas - La Montaña:                     |";
+						Escribir"  | General:                                    ", generalAB); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                       ", tEdadNAB); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Exonerados:                                 ", exoneradoAB); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo La Montaña - La Aguada:                     |";
+						Escribir"  | General:                                    ", generalBC); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                       ", tEdadNBC); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Exonerados:                                 ", exoneradoBC); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo La Aguada - Loma Redonda:                   |";
+						Escribir"  | General:                                    ", generalCD); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                       ", tEdadNCD); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Exonerados:                                 ", exoneradoCD); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo Loma Redonda - Pico Espejo:                 |";
+						Escribir"  | General:                                    ", generalDE); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                       ", tEdadNDE); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Exonerados:                                 ", exoneradoDE); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Total Boletos Generales:                    ", nBGeneralVendidos); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Total Boletos Tercera Edad o Niños:         ", nBTEdadNVendidos); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | Total Boletos Exonerados:                   ", nBExoneradosVendidos); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  | TOTAL:                                      ", nBTotalVendidos); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Presione cualquier tecla para continuar...        |";
+						Escribir"  |---------------------------------------------------|";
+						readkey;
+						Limpiar pantalla;
+					Caso, =2
+						Limpiar pantalla;
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Número de asientos disponibles en cada tramo:     |";
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo Barinitas - La Montaña:            ", aDisponiblesAB, "/60"); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo La Montaña - La Aguada:            ", aDisponiblesBC, "/60"); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo La Aguada - Loma Redonda:          ", aDisponiblesCD, "/60"); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Tramo Loma Redonda - Pico Espejo:        ", aDisponiblesDE, "/60"); gotoXY(55, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------|";
+						Escribir"  | Presione cualquier tecla para continuar...        |";
+						Escribir"  |---------------------------------------------------|";
+						readkey;
+						Limpiar pantalla;
+					Caso, =3
+						Limpiar pantalla;
+						VentaGeneralAB:= precioGeneral*generalAB;
+                            			VentaTEdadNAB:= precioTEdadN*tEdadNAB;
+                            			VentaExoneradoAB:= precioExonerado*exoneradoAB;
+                            			VentaGeneralBC:= precioGeneral*generalBC;
+                            			VentaTEdadNBC:= precioTEdadN*tEdadNBC;
+                            			VentaExoneradoBC:= precioExonerado*exoneradoBC;
+                            			VentaGeneralCD:= precioGeneral*generalCD;
+                            			VentaTEdadNCD:= precioTEdadN*tEdadNCD;
+                            			VentaExoneradoCD:= precioExonerado*exoneradoCD;
+                            			VentaGeneralDE:= precioGeneral*generalDE;
+                            			VentaTEdadNDE:= precioTEdadN*tEdadNDE;
+                            			VentaExoneradoDE:= precioExonerado*exoneradoDE;
+                            			VentaGeneralTotal:= VentaGeneralAB + VentaGeneralBC + VentaGeneralCD + VentaGeneralDE;
+                            			VentaTEdadNTotal:= VentaTEdadNAB + VentaTEdadNBC + VentaTEdadNCD + VentaTEdadNDE;
+                            			VentaExoneradoTotal:= VentaExoneradoAB + VentaExoneradoBC + VentaExoneradoCD + VentaExoneradoDE;
+                            			ventaTotal:= VentaGeneralTotal + VentaTEdadNTotal + VentaExoneradoTotal;
+						Escribir"  |--------------------------Reporte de Ventas--------------------------|";
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Tramo Barinitas - La Montaña:                                       |";
+						Escribir"  | General:                             ", precioGeneral:0:2, "$x", generalAB, "      Total: ", VentaGeneralAB:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                ", precioTEdadN:0:2, "$x", tEdadNAB, "      Total: ", VentaTEdadNAB:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Exonerado:                           ", precioExonerado:0:2, "$x", exoneradoAB, "       Total: ", VentaExoneradoAB:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Tramo La Montaña - La Aguada:                                       |";
+						Escribir"  | General:                             ", precioGeneral:0:2, "$x", generalBC, "      Total: ", VentaGeneralBC:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                ", precioTEdadN:0:2, "$x", tEdadNBC, "      Total: ", VentaTEdadNBC:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Exonerado:                           ", precioExonerado:0:2, "$x", exoneradoBC, "       Total: ", VentaExoneradoBC:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Tramo La Aguada - Loma Redonda:                                     |";
+						Escribir"  | General:                             ", precioGeneral:0:2, "$x", generalCD, "      Total: ", VentaGeneralCD:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                ", precioTEdadN:0:2, "$x", tEdadNCD, "      Total: ", VentaTEdadNCD:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Exonerado:                           ", precioExonerado:0:2, "$x", exoneradoCD, "       Total: ", VentaExoneradoCD:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Tramo Loma Redonda - Pico Espejo:                                   |";
+						Escribir"  | General:                             ", precioGeneral:0:2, "$x", generalDE, "      Total: ", VentaGeneralDE:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Tercera Edad o Niños:                ", precioTEdadN:0:2, "$x", tEdadNDE, "      Total: ", VentaTEdadNDE:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Exonerado:                           ", precioExonerado:0:2, "$x", exoneradoDE, "       Total: ", VentaExoneradoDE:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Total General:                       ", VentaGeneralTotal:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Total Tercera Edad o Niños:          ", VentaTEdadNTotal:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | Total Exonerado:                     ", VentaExoneradoTotal:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  | TOTAL:                               ", ventaTotal:0:2, "$"); gotoXY(73, WhereY-1); Escribir('|');
+						Escribir"  |---------------------------------------------------------------------|";
+						Escribir"  | Presione cualquier tecla para continuar...                          |";
+						Escribir"  |---------------------------------------------------------------------|";
+						readkey;
+						Limpiar pantalla;
+					Caso, =Sino
+						Escribir"  |--------------------------------------------------|";
+						Escribir"  | El dato ingresado no es válido.                  |";
+						Escribir"  |--------------------------------------------------|";
+						delay(2000);
+					Fin Sino
+				Fin Segun
+			Hasta (systemOp esta entre ["1", "2", "3"]);
+		////////////////////////////////////////////////////////////////////////////////////////////////// SALIR.
+		Caso, =3 //El usuario podra salir del sistema.
+			Limpiar pantalla;
+			Escribir"  |--------------------------------------------------|";
+			Escribir"  |   ¡Gracias por usar el sistema! Vuelva pronto.   |";
+			Escribir"  |--------------------------------------------------|";
+		Caso, =Sino
+			Escribir"  | El dato ingresado no es válido.                   |";
+			Escribir"  |---------------------------------------------------|";
+			delay(2000);
+			Limpiar pantalla;
+		Fin Sino
+	Fin Segun
+Hasta op="3"; //Sale del loop una vez la condicion para salir sea true.
+readkey;
+Fin.
